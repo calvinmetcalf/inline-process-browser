@@ -14,7 +14,7 @@ function apply() {
     var string = Buffer.concat(buffers).toString();
     if (!string.match(regex)) {
       this.push(string);
-      next();
+      return next();
     }
     var resp = falafel(string, {
       ecmaVersion: 6,
